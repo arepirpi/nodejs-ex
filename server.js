@@ -94,7 +94,7 @@ app.get('/', function (req, res) {
 	//res.render(feed.xml(), { pageCountMessage : null});
     });
   } else {
-    res.render('index.html', { pageCountMessage : null});
+    res.render('index.html', { pageCountMessage : null, keithvar: 'testing value' });
   }
 });
 
