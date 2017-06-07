@@ -94,6 +94,22 @@ app.get('/', function (req, res) {
 	//res.render(feed.xml(), { pageCountMessage : null});
     });
   } else {
+	  var feed = new RSS({
+    title: 'title111',
+    description: 'test descrtiption',
+    feed_url: 'https://www.google.com',
+    site_url: 'https://www.google.com'
+	});
+
+	//issues.forEach((issue, index) => 	)
+	feed.item({
+      title: 'test feed title',
+      description: 'test feed description', 
+      url: 'http://www.testurl.com',
+      author: 'aaauthor',
+      date: '2017-01-01'
+      
+    });
     res.render('index.html', { pageCountMessage : null, keithvar: feed.xml() });
   }
 });
