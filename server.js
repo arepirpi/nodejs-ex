@@ -90,7 +90,7 @@ app.get('/', function (req, res) {
     });
   //return feed.xml();
   //var keithvar = 'abc';
-  res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails, keithvar: feed.xml() });
+  res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails, keithvar: 'testing value' });
 	//res.render(feed.xml(), { pageCountMessage : null});
     });
   } else {
