@@ -89,7 +89,8 @@ app.get('/', function (req, res) {
       
     });
   //return feed.xml();
-	res.render(feed.xml(), { pageCountMessage : null});
+  res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails, keithvar: feed.xml() });
+	//res.render(feed.xml(), { pageCountMessage : null});
     });
   } else {
     res.render('index.html', { pageCountMessage : null});
