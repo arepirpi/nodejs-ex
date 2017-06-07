@@ -3,6 +3,7 @@ var express = require('express'),
     fs      = require('fs'),
     app     = express(),
     eps     = require('ejs'),
+	RSS 	= require('rss');
     morgan  = require('morgan');
     
 Object.assign=require('object-assign')
@@ -68,6 +69,7 @@ app.get('/', function (req, res) {
     var col = db.collection('counts');
     // Create a document with request IP and current time of request
     col.insert({ip: req.ip, date: Date.now()});
+	
     col.count(function(err, count){
       res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails });
     });
